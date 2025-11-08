@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Medical Services - Accueil</title>
+    
+    <style data-ht-styles>
+      /* --- Réglages de base --- */
+      body {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #2b2b2b;
+        background-color: #ffffff;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+
+      /* --- Structure Globale --- */
+      .container-large {
+        width: 100%;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .section-padding-large {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      
+      .section-header {
+        text-align: center;
+        margin-bottom: 64px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #2b2b2b;
+        margin-top: 0;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #666666;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 400;
+      }
+
+      .button-primary {
+        display: inline-block;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
+        background-color: #6C9A3E;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        transition-property: transform, box-shadow, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0px 4px 12px rgba(108, 154, 62, 0.2);
+      }
+      
+      /* --- En-tête (Header) --- */
+      .header-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #e8e8e8;
+        position: sticky;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+
+      .nav-logo-image {
+        height: 52px;
+        width: auto;
+        margin-right: 16px;
+      }
+      
+      .nav-logo-text {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #555555;
+        line-height: 1.3;
+        max-width: 160px;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-link {
+        margin-left: 8px;
+        margin-right: 8px;
+        text-decoration: none;
+        color: #2b2b2b;
+        font-weight: 600;
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transition-property: background-color, color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+      }
+
+      .nav-button {
+        margin-left: 20px;
+      }
+      
+      .nav-menu-button {
+        display: none; 
+        width: 48px;
+        height: 48px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border-width: 0;
+        cursor: pointer;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+      
+      .nav-burger-line {
+        width: 24px;
+        height: 2px;
+        background-color: #2b2b2b;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        border-radius: 2px;
+        transition-property: transform, opacity;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+
+      /* --- Section Héros --- */
+      .hero-section {
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+        position: relative;
+      }
+      
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 20% 50%, rgba(148, 193, 31, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-card {
+        background: #ffffff;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        overflow: hidden;
+        text-decoration: none;
+        transition-property: transform, box-shadow;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-top-color: #94C11F;
+        position: relative;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+      }
+      
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(148, 193, 31, 0.05) 0%, transparent 100%);
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-out;
+        z-index: 1;
+      }
+
+      .hero-card__image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 340px;
+        overflow: hidden;
+      }
+      
+      .hero-card__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition-property: transform;
+        transition-duration: 0.6s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .hero-card__content {
+        padding-top: 32px;
+        padding-bottom: 40px;
+        padding-left: 32px;
+        padding-right: 32px;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .hero-card__title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #2b2b2b;
+        margin-top: 0;
+        margin-bottom: 28px;
+        letter-spacing: -0.02em;
+      }
+      
+      .hero-card__button {
+        background-color: #6C9A3E;
+        color: #ffffff;
+        font-size: 15px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+      
+      /* --- Section "Pourquoi FMS?" --- */
+      .why-fms-section {
+        background-color: #ffffff;
+        position: relative;
+      }
+      
+      .why-fms-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .why-fms-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-left: 24px;
+        padding-right: 24px;
+        background-color: #fafafa;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-top-color: #94C11F;
+        transition-property: transform, box-shadow, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      
+      .why-fms-item__icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        color: #6C9A3E;
+        flex-shrink: 0;
+        background-color: rgba(148, 193, 31, 0.15);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-property: transform, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      
+      .why-fms-item__icon-svg {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .why-fms-item__text {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2b2b2b;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.5;
+      }
+      
+      /* --- Section Fournisseurs --- */
+      .sponsors-section {
+        padding-top: 0;
+        padding-bottom: 80px;
+        background-color: #ffffff;
+      }
+
+      .sponsors-header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .sponsors-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #888888;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+        align-items: center;
+      }
+
+      .sponsor-logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        opacity: 0.7;
+        filter: grayscale(0%);
+        transition-property: opacity, filter, transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      
+      .sponsor-logo-image {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+      }
+
+      /* --- Séparateur en Vague --- */
+      .wavy-separator-section {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 0;
+      }
+      
+      .wavy-svg-wrapper {
+        width: 100%;
+      }
+      
+      /* --- Section "Nos Valeurs" --- */
+      .values-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      }
+      
+      .values-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+      }
+      
+      .value-card {
+        background-color: #ffffff;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 32px;
+        padding-right: 32px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+        border-top-width: 4px;
+        border-top-style: solid;
+        border-top-color: #94C11F;
+        transition-property: transform, box-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .value-card__icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 24px;
+        color: #6C9A3E;
+        background-color: rgba(148, 193, 31, 0.15);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      
+      .value-card__icon-svg {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .value-card__title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #6C9A3E;
+        margin-top: 0;
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+      
+      .value-card__list {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+        width: 100%;
+      }
+      
+      .value-card__list-item {
+        font-size: 1rem;
+        color: #555555;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+
+      /* --- Section Pied de page --- */
+      .footer-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
+        color: #eeeeee;
+      }
+      
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 48px;
+        grid-row-gap: 48px;
+        margin-bottom: 48px;
+      }
+      
+      .footer-column__title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin-top: 0;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+      }
+      
+      .footer-link {
+        display: block;
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 12px;
+        transition-property: color, transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+        padding-left: 0;
+      }
+      
+      .footer-text {
+        font-size: 0.95rem;
+        color: #cccccc;
+        margin-top: 0;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+      
+      .footer-logo-image {
+        height: 56px;
+        width: auto;
+        margin-top: 20px;
+        opacity: 0.9;
+      }
+      
+      .footer-bottom-bar {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #888888;
+        padding-top: 32px;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* --- Responsive --- */
+
+      @media (max-width: 991px) {
+        .nav-menu {
+          display: none;
+        }
+        .nav-button {
+          display: none;
+        }
+        .nav-menu-button {
+          display: flex;
+        }
+      
+        .hero-grid {
+          grid-template-columns: 1fr;
+          grid-column-gap: 0;
+          grid-row-gap: 32px;
+        }
+        
+        .sponsors-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .why-fms-grid {
+          grid-template-columns: 1fr 1fr;
+          grid-row-gap: 32px;
+        }
+        
+        .values-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .section-padding-large {
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .nav-logo-text {
+          display: none;
+        }
+        
+        .nav-menu.is-open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 92px;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #e8e8e8;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+        }
+        .nav-menu.is-open .nav-link {
+            margin-bottom: 8px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title {
+          font-size: 2.2rem;
+        }
+        
+        .section-padding-large {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+        
+        .why-fms-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .why-fms-item {
+          padding-top: 28px;
+          padding-bottom: 28px;
+        }
+        
+        .sponsors-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .container-large {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        
+        .section-title {
+          font-size: 1.9rem;
+        }
+        
+        .hero-card__title {
+          font-size: 1.9rem;
+        }
+        
+        .hero-card__image-wrapper {
+          height: 280px;
+        }
+        
+        .why-fms-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .why-fms-item {
+          padding-top: 28px;
+          padding-bottom: 28px;
+        }
+        .why-fms-item__icon-wrapper {
+          margin-bottom: 16px;
+        }
+        
+        .value-card {
+          padding-top: 32px;
+          padding-bottom: 32px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <div class="htflow-wrapper">
+
+        <header class="header-section" data-ht-header>
+            <div class="container-large">
+                <nav class="navbar" data-ht-navbar>
+                    <a href="/" class="nav-logo-link" data-ht-nav-link="home">
+                        <img src="unnamed.png" alt="First Medical Services Logo" class="nav-logo-image" />
+                        <div class="nav-logo-text">Partenaires de votre activité</div>
+                    </a>
+                    
+                    <div class="nav-menu" data-ht-nav-menu>
+                        <a href="/" class="nav-link" data-ht-nav-link="accueil">Accueil</a>
+                        <a href="/dentaire" class="nav-link" data-ht-nav-link="dentaire">Dentaire</a>
+                        <a href="/medical" class="nav-link" data-ht-nav-link="medical">Médical</a>
+                    </div>
+                    
+                    <a href="/devis" class="button-primary nav-button" data-ht-quote-button data-ht-button-animated>Mon Devis</a>
+                    
+                    <button class="nav-menu-button" data-ht-menu-toggle>
+                        <div class="nav-burger-line"></div>
+                        <div class="nav-burger-line"></div>
+                        <div class="nav-burger-line"></div>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-wrapper">
+
+            <section class="hero-section section-padding-large">
+                <div class="container-large">
+                    <div class="hero-grid" data-ht-hero-grid>
+                        
+                        <a href="/dentaire" class="hero-card" data-ht-hero-card data-ht-nav-link="dentaire-hero">
+                            <div class="hero-card__image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop" alt="Univers Dentaire" class="hero-card__image" />
+                            </div>
+                            <div class="hero-card__content">
+                                <h2 class="hero-card__title">Univers Dentaire</h2>
+                                <div class="button-primary hero-card__button" data-ht-button-animated>Découvrir</div>
+                            </div>
+                        </a>
+                        
+                        <a href="/medical" class="hero-card" data-ht-hero-card data-ht-nav-link="medical-hero">
+                            <div class="hero-card__image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&h=600&fit=crop" alt="Univers Médical" class="hero-card__image" />
+                            </div>
+                            <div class="hero-card__content">
+                                <h2 class="hero-card__title">Univers Médical</h2>
+                                <div class="button-primary hero-card__button" data-ht-button-animated>Découvrir</div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-fms-section section-padding-large">
+                <div class="container-large">
+                    <div class="section-header">
+                        <h2 class="section-title">Pourquoi faire appel à FMS ?</h2>
+                        <p class="section-subtitle">Des solutions complètes pour votre activité médicale</p>
+                    </div>
+                    <div class="why-fms-grid" data-ht-why-fms-grid>
+                        
+                        <div class="why-fms-item" data-ht-why-fms-item="1">
+                            <div class="why-fms-item__icon-wrapper" data-ht-animated-icon>
+                                <svg class="why-fms-item__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
+                            </div>
+                            <p class="why-fms-item__text">Un large choix de produits et services</p>
+                        </div>
+                        
+                        <div class="why-fms-item" data-ht-why-fms-item="2">
+                            <div class="why-fms-item__icon-wrapper" data-ht-animated-icon>
+                                <svg class="why-fms-item__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 00-12.728 0M12 3v9M15 9l-3 3-3-3"></path></svg>
+                            </div>
+                            <p class="why-fms-item__text">Une équipe d'experts proposant des solutions sur mesure</p>
+                        </div>
+                        
+                        <div class="why-fms-item" data-ht-why-fms-item="3">
+                            <div class="why-fms-item__icon-wrapper" data-ht-animated-icon>
+                                <svg class="why-fms-item__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m12 0a2 2 0 100-4m0 4a2 2 0 110-4M6 12v-2a2 2 0 012-2h8a2 2 0 012 2v2"></path></svg>
+                            </div>
+                            <p class="why-fms-item__text">Des solutions adaptées à chaque métier, à chaque besoin</p>
+                        </div>
+                        
+                        <div class="why-fms-item" data-ht-why-fms-item="4">
+                            <div class="why-fms-item__icon-wrapper" data-ht-animated-icon>
+                                <svg class="why-fms-item__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
+                            </div>
+                            <p class="why-fms-item__text">Des produits de qualité</p>
+                        </div>
+                        
+                        <div class="why-fms-item" data-ht-why-fms-item="5">
+                            <div class="why-fms-item__icon-wrapper" data-ht-animated-icon>
+                                <svg class="why-fms-item__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6M9 11.25h6M9 15.75h6"></path></svg>
+                            </div>
+                            <p class="why-fms-item__text">Stock et équipes locales</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="sponsors-section" data-ht-sponsors>
+                <div class="container-large">
+                    <div class="sponsors-header">
+                        <p class="sponsors-title">Ils nous font confiance</p>
+                    </div>
+                    <div class="sponsors-grid" data-ht-sponsors-grid>
+                        <a href="#" class="sponsor-logo-link" data-ht-sponsor-logo="1">
+                            <img src="https://logo.clearbit.com/fmts.fr?size=150" alt="Logo FMTS" class="sponsor-logo-image" />
+                        </a>
+                        <a href="#" class="sponsor-logo-link" data-ht-sponsor-logo="2">
+                            <img src="https://logo.clearbit.com/heka-dental.fr?size=150" alt="Logo Heka Dental" class="sponsor-logo-image" />
+                        </a>
+                        <a href="#" class="sponsor-logo-link" data-ht-sponsor-logo="3">
+                            <img src="https://logo.clearbit.com/dimaco.com?size=150" alt="Logo Dimaco" class="sponsor-logo-image" />
+                        </a>
+                        <a href="#" class="sponsor-logo-link" data-ht-sponsor-logo="4">
+                            <img src="https://logo.clearbit.com/castellini.com?size=150" alt="Logo Castellini" class="sponsor-logo-image" />
+                        </a>
+                        <a href="#" class="sponsor-logo-link" data-ht-sponsor-logo="5">
+                            <img src="https://logo.clearbit.com/duerrdental.com?size=150" alt="Logo Durr Dental" class="sponsor-logo-image" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="wavy-separator-section">
+                <div class="wavy-svg-wrapper" data-ht-wave-svg>
+                    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" fill="#6C9A3E">
+                        <path d="M1440 21.2105C1362.4 2.83685 1228.8 -8.35525 1072 21.2105C856 59.1579 736 120 504 120C272 120 120 59.1579 0 21.2105V120H1440V21.2105Z"></path>
+                    </svg>
+                </div>
+            </section>
+            
+            <section class="values-section section-padding-large">
+                <div class="container-large">
+                    <div class="section-header">
+                        <h2 class="section-title" style="color: #2b2b2b;">Nos Valeurs</h2>
+                    </div>
+                    <div class="values-grid" data-ht-values-grid">
+                        
+                        <div class="value-card" data-ht-value-card="1">
+                            <div class="value-card__icon-wrapper">
+                                <svg class="value-card__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13h1v7c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2v-7h1m-1-3h-4V7c0-1.105-.895-2-2-2h-2c-1.105 0-2 .895-2 2v3H6m12 0H6m0 0l6-6 6 6"/></svg>
+                            </div>
+                            <h3 class="value-card__title">Réactivité</h3>
+                            <ul class="value-card__list">
+                                <li class="value-card__list-item">Traitement des demandes</li>
+                                <li class="value-card__list-item">Recherche des produits et fournisseurs</li>
+                                <li class="value-card__list-item">Satisfaction Client</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="value-card" data-ht-value-card="2">
+                            <div class="value-card__icon-wrapper">
+                                <svg class="value-card__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
+                            </div>
+                            <h3 class="value-card__title">Qualité</h3>
+                            <ul class="value-card__list">
+                                <li class="value-card__list-item">Produits et services First</li>
+                                <li class="value-card__list-item">Construire l'offre selon l'exigence</li>
+                                <li class="value-card__list-item">Eco responsabilité</li>
+                                <li class="value-card__list-item">Ethique</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="value-card" data-ht-value-card="3">
+                            <div class="value-card__icon-wrapper">
+                                <svg class="value-card__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"></path></svg>
+                            </div>
+                            <h3 class="value-card__title">Plaisir</h3>
+                            <ul class="value-card__list">
+                                <li class="value-card__list-item">Implication</li>
+                                <li class="value-card__list-item">Réussite</li>
+                                <li class="value-card__list-item">Epanouissement</li>
+                                <li class="value-card__list-item">Evènementiel</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="value-card" data-ht-value-card="4">
+                            <div class="value-card__icon-wrapper">
+                                <svg class="value-card__icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>
+                            </div>
+                            <h3 class="value-card__title">Technicité</h3>
+                            <ul class="value-card__list">
+                                <li class="value-card__list-item">Formation</li>
+                                <li class="value-card__list-item">Personnel qualifié</li>
+                                <li class="value-card__list-item">Techniciens</li>
+                                <li class="value-card__list-item">Innovation</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="footer-section section-padding-large">
+            <div class="container-large">
+                <div class="footer-grid">
+                    
+                    <div class="footer-column" data-ht-footer-col="1">
+                        <h4 class="footer-column__title">First Medical Services</h4>
+                        <p class="footer-text">Partenaires de votre activité. Nous fournissons des équipements et services pour le dentaire et le médical.</p>
+                        <img src="unnamed.png" alt="Logo FMS" class="footer-logo-image" />
+                    </div>
+                    
+                    <div class="footer-column" data-ht-footer-col="2">
+                        <h4 class="footer-column__title">Navigation</h4>
+                        <a href="/" class="footer-link" data-ht-footer-link="accueil">Accueil</a>
+                        <a href="/dentaire" class="footer-link" data-ht-footer-link="dentaire">Univers Dentaire</a>
+                        <a href="/medical" class="footer-link" data-ht-footer-link="medical">Univers Médical</a>
+                        <a href="/devis" class="footer-link" data-ht-footer-link="devis">Demander un devis</a>
+                    </div>
+                    
+                    <div class="footer-column" data-ht-footer-col="3">
+                        <h4 class="footer-column__title">Contact</h4>
+                        <p class="footer-text">Email: contact@fms.com</p>
+                        <p class="footer-text">Téléphone: 01 23 45 67 89</p>
+                        <p class="footer-text">Adresse: 123 Rue Fictive, Guyane</p>
+                    </div>
+
+                </div>
+                <div class="footer-bottom-bar">
+                    <p class="footer-text">© 2025 First Medical Services. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script data-ht-main-script>
+      (() => {
+        
+        const menuToggle = document.querySelector('[data-ht-menu-toggle]');
+        const navMenu = document.querySelector('[data-ht-nav-menu]');
+
+        if (menuToggle && navMenu) {
+          const toggleMenu = () => {
+            const isOpen = navMenu.classList.contains('is-open');
+            if (isOpen) {
+              navMenu.classList.remove('is-open');
+              navMenu.style.display = 'none';
+            } else {
+              navMenu.classList.add('is-open');
+              navMenu.style.display = 'flex';
+            }
+          };
+          menuToggle.addEventListener('click', toggleMenu);
+        }
+
+        const heroCards = document.querySelectorAll('[data-ht-hero-card]');
+        heroCards.forEach((card) => {
+          card.addEventListener('mouseenter', () => {
+            card.style.transform = 'scale(1.03)';
+            card.style.boxShadow = '0px 12px 40px rgba(0, 0, 0, 0.3)';
+            const overlay = card.querySelector('::before');
+            card.style.setProperty('--overlay-opacity', '1');
+            const img = card.querySelector('.hero-card__image');
+            if (img) img.style.transform = 'scale(1.1)';
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'scale(1)';
+            card.style.boxShadow = 'none';
+            const img = card.querySelector('.hero-card__image');
+            if (img) img.style.transform = 'scale(1)';
+          });
+        });
+
+        const animatedButtons = document.querySelectorAll('[data-ht-button-animated]');
+        animatedButtons.forEach((button) => {
+          button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-3px)';
+            button.style.boxShadow = '0px 10px 20px rgba(108, 154, 62, 0.4)';
+          });
+          button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0)';
+            button.style.boxShadow = '0px 4px 12px rgba(108, 154, 62, 0.2)';
+          });
+        });
+        
+        const whyFmsItems = document.querySelectorAll('[data-ht-why-fms-item]');
+        whyFmsItems.forEach((item) => {
+          item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-4px)';
+            item.style.boxShadow = '0px 8px 24px rgba(0, 0, 0, 0.1)';
+            item.style.backgroundColor = '#ffffff';
+            const icon = item.querySelector('[data-ht-animated-icon]');
+            if (icon) {
+              icon.style.transform = 'scale(1.15) rotate(5deg)';
+              icon.style.backgroundColor = 'rgba(148, 193, 31, 0.2)';
+            }
+          });
+          item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateY(0)';
+            item.style.boxShadow = 'none';
+            item.style.backgroundColor = '#fafafa';
+            const icon = item.querySelector('[data-ht-animated-icon]');
+            if (icon) {
+              icon.style.transform = 'scale(1)';
+              icon.style.backgroundColor = 'rgba(148, 193, 31, 0.1)';
+            }
+          });
+        });
+        
+        const sponsorLogos = document.querySelectorAll('[data-ht-sponsor-logo]');
+        sponsorLogos.forEach((logo) => {
+          logo.addEventListener('mouseenter', () => {
+            logo.style.opacity = '1';
+            logo.style.filter = 'grayscale(0%)';
+            logo.style.transform = 'scale(1.05)';
+          });
+          logo.addEventListener('mouseleave', () => {
+            logo.style.opacity = '0.5';
+            logo.style.filter = 'grayscale(100%)';
+            logo.style.transform = 'scale(1)';
+          });
+        });
+        
+        const valueCards = document.querySelectorAll('[data-ht-value-card]');
+        valueCards.forEach((card) => {
+          card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px)';
+            card.style.boxShadow = '0px 16px 40px rgba(0, 0, 0, 0.12)';
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0px 8px 24px rgba(0, 0, 0, 0.06)';
+          });
+        });
+        
+        const footerLinks = document.querySelectorAll('[data-ht-footer-link]');
+        footerLinks.forEach((link) => {
+          link.addEventListener('mouseenter', () => {
+            link.style.color = '#94C11F';
+            link.style.transform = 'translateX(4px)';
+          });
+          link.addEventListener('mouseleave', () => {
+            link.style.color = '#cccccc';
+            link.style.transform = 'translateX(0)';
+          });
+        });
+        
+        const navLinks = document.querySelectorAll('[data-ht-nav-link]');
+        navLinks.forEach((link) => {
+          if (link.classList.contains('nav-link')) {
+            link.addEventListener('mouseenter', () => {
+              link.style.backgroundColor = '#f5f5f5';
+              link.style.color = '#6C9A3E';
+            });
+            link.addEventListener('mouseleave', () => {
+              link.style.backgroundColor = 'transparent';
+              link.style.color = '#2b2b2b';
+            });
+          }
+        });
+
+        console.log("HTFlow - FMS Site Amélioré initialisé avec succès ✅");
+        
+      })();
+    </script>
+</body>
+</html>
